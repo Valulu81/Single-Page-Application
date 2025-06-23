@@ -1,0 +1,38 @@
+{
+    "artists":
+    [
+        {
+            "nombre": "BaishaJAWS",
+            "imagen": "https://res.cloudinary.com/dhotqeo6c/image/upload/c_crop,ar_1:1/v1750717798/78dff3a8b1f162df2764731cbb72a87f.1000x1000x1_iekbrd.jpg"
+        },
+        {
+            "nombre": "Papa Roach",
+            "imagen": "https://res.cloudinary.com/dhotqeo6c/image/upload/c_crop,ar_1:1/v1750717795/unnamed-7_qf4kbk.jpg"
+        },
+        {
+            "nombre": "Simon Curtis",
+            "imagen": "https://res.cloudinary.com/dhotqeo6c/image/upload/c_crop,ar_1:1/v1750717930/89ec0fafc910179e290e17088102f632_n466pz.jpg"
+        },
+        {
+            "nombre": "The Living Tombstone",
+            "imagen": "https://res.cloudinary.com/dhotqeo6c/image/upload/c_crop,ar_1:1/v1750717871/0e0a0f03d4c835628d934c738bb8872e_phfdga.jpg"
+        },
+        {
+            "nombre": "JVKE",
+            "imagen": "https://res.cloudinary.com/dhotqeo6c/image/upload/c_crop,ar_1:1/v1750717890/JVKE_zz9sqk.jpg"
+        },
+        {
+            "nombre": "Mother Mother",
+            "imagen": "https://res.cloudinary.com/dhotqeo6c/image/upload/c_crop,ar_1:1/v1750717903/mother_o_uxc2h4.jpg"
+        },
+        {
+            "nombre": "PARK BYEONG HOON",
+            "imagen": "https://res.cloudinary.com/dhotqeo6c/image/upload/c_crop,ar_1:1/v1750717770/channels4_profile_bfbfob.jpg"
+        },
+        {
+            "nombre": "MILGRAM -ミルグラム- / フータ",
+            "imagen": "https://res.cloudinary.com/dhotqeo6c/image/upload/v1750718254/3449c201e35013c338f01c3a1df26a23_ycrvuz.jpg"
+        }
+    ]
+    
+}

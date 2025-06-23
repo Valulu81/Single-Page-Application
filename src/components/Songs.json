@@ -1,0 +1,44 @@
+{"canciones": [
+    {
+        "nombre": "PARATISE",
+        "portada":"https://res.cloudinary.com/dhotqeo6c/image/upload/v1750715072/310e3002daefa1f4134e3a14da654627_spuxra.jpg",
+        "Autores" :"PARK BYEONG HOON"
+    },
+    {
+        "nombre": "BLACK SORROW",
+        "portada":"https://res.cloudinary.com/dhotqeo6c/image/upload/v1750715181/7c17d5df8ac268e32301198cabc14154_sivdjo.jpg",
+        "Autores" :"PARK BYEONG HOON"
+    },
+        {
+        "nombre": "VORTEX (《时光代理人第二季》宣传曲)",
+        "portada":"https://res.cloudinary.com/dhotqeo6c/image/upload/v1750715309/95974990-6c8f-4c20-812d-b3ef479577aa.png",
+        "Autores" :"BaishaJAWS"
+    },
+        {
+        "nombre": "Abyss-from Kaiju No.8",
+        "portada":"https://res.cloudinary.com/dhotqeo6c/image/upload/v1750715566/1200x1200bf-60_mihzww.jpg",
+        "Autores" :"YUNGBLUD"
+    },
+        {
+        "nombre": "NOWHERE",
+        "portada":"https://res.cloudinary.com/dhotqeo6c/image/upload/v1750715647/4f7c1fc75504f89fdffd1314df1d2252_z6mxxb.jpg",
+        "Autores" :"PARK BYEONG HOON"
+    },
+        {
+        "nombre": "事変上等",
+        "portada":"https://res.cloudinary.com/dhotqeo6c/image/upload/v1750715836/28c294033a75f50fae35edae02cbe6be_jkelsa.jpg",
+        "Autores" :"MILGRAM -ミルグラム- / フータ"
+    },
+        {
+        "nombre": "弱肉共食",
+        "portada":"https://res.cloudinary.com/dhotqeo6c/image/upload/v1750715871/4184c535df7ee906945b9a414712d06a_j25rw6.jpg",
+        "Autores" :"MILGRAM -ミルグラム- / フータ"
+    },
+        {
+        "nombre": "スローダウン",
+        "portada":"https://res.cloudinary.com/dhotqeo6c/image/upload/v1750715918/9dabcad005f92ae9fde40274bbd93c5d_ufyuwc.jpg",
+        "Autores" :"MILGRAM -ミルグラム- / フータ"
+    }
+    
+]
+}
