@@ -93,4 +93,81 @@
   .lateral {
       width: 380px;
   }
+.caja {
+    background-color: #121212;
+    color: white;
+    width: 300px;
+    padding: 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 2%;
+    margin: 0; /* se elimina el margin auto para dejar que flex haga el centrado */
+  }
+  .content2 {
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente */
+    height: 100vh;           /* ocupa el alto total de la pantalla */
+  }
+}
+
+/*Parte del Iniciar Sesion*/
+
+  .caja {
+  background-color: #121212;
+  color: white;
+  width: fit-content; 
+  margin: 1rem auto; 
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  border-radius: 2%;
+}
+
+.content2 {
+  flex: 1;
+  background: linear-gradient(to bottom, #222222, #121212);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  min-height: 100vh;
+  padding: 20px;
+
+}
+
+.Btn-inicio{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  align-items: center;
+  
+}
+.Btn-inicio img {
+  margin-bottom: 1rem;
+  width: 50px;
+}
+
+form .form-control {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+form .form-control:focus {
+  border-color: white; 
+  box-shadow: 0 0 0 0.2rem rgba(30, 215, 96, 0.25);
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+form .form-label {
+  color: #ccc;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }

@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import { logo } from "./FormContent";
-import { dbStore } from "../firebase/appConfig";
 
-console.log(dbStore)
-export default function FormSesion() {
+
+
+export default function FormRegistro() {
     const {
         register,
         handleSubmit,
@@ -51,10 +51,7 @@ export default function FormSesion() {
             <section className="caja text-center">
                 <div className="Btn-inicio ">
                     <img width="40px" src={logo} alt="LogoSpotify" />
-                    <h2>Inicia sesión en Spotify y disfruta de la música</h2>
-                    <button className="btn btn-danger rounded-pill px-3 fw-bold py-2 mb-2 mt-3" >Continuar con Google</button>
-                    <button className="btn btn-primary rounded-pill px-3 fw-bold py-2 my-2">Continuar con Facebook</button>
-                    <button className="btn btn-light rounded-pill px-3 fw-bold py-2 my-2">Continuar con Apple</button>
+                    <h2>Regístrate para empezar a escuchar contenido</h2>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-3">
@@ -82,9 +79,14 @@ export default function FormSesion() {
                     </div>
 
                     <button type="submit" className="btn btn-success rounded-pill w-100">
-                        Iniciar Sesion
+                        Registrarme
                     </button>
-
+                    <div className="Btn-inicio ">
+                        <p className="mt-3">o tambien puedes:</p>
+                        <button className="btn btn-danger rounded-pill px-3 fw-bold py-2 my-2" >Continuar con Google</button>
+                        <button className="btn btn-primary rounded-pill px-3 fw-bold py-2 my-2">Continuar con Facebook</button>
+                        <button className="btn btn-light rounded-pill px-3 fw-bold py-2 my-2">Continuar con Apple</button>
+                    </div>
                 </form>
             </section>
         </div>
