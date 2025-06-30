@@ -1,6 +1,9 @@
 import { useForm } from "react-hook-form";
 import { logo } from "./FormContent";
-
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, dbStore } from "../firebase/appConfig";
+import Swal from 'sweetalert2';
 
 
 export default function FormRegistro() {
@@ -14,18 +17,11 @@ export default function FormRegistro() {
 
     const dominiosValidos = ["gmail.com", "outlook.com", "hotmail.com", "udb.edu.sv"];
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         const partes = data.email.split("@");
-        if (partes.length !== 2) {
-            setError("email", {
-                type: "manual",
-                message: "Formato de correo inválido.",
-            });
-            return;
-        }
+        const dominio = partes[1]?.toLowerCase();
 
-        const dominio = partes[1].toLowerCase();
-        if (!dominiosValidos.includes(dominio)) {
+        if (!dominio || !dominiosValidos.includes(dominio)) {
             setError("email", {
                 type: "manual",
                 message: `Dominio no permitido. Solo se aceptan: ${dominiosValidos.join(", ")}`,
@@ -33,17 +29,34 @@ export default function FormRegistro() {
             return;
         }
 
-        localStorage.setItem("usuario", data.email);
-        alert("Inicio de sesión exitoso!");
-        reset();
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
+            const user = userCredential.user;
 
-        setTimeout(() => {
-            const modal = document.querySelector('#loginModal');
-            modal?.classList.remove('show');
-            document.body.classList.remove('modal-open');
-            document.querySelector('.modal-backdrop')?.remove();
-        }, 300);
+            // Guardar datos en Firestore
+            await setDoc(doc(dbStore, "usuarios", user.uid), {
+                email: data.email,
+                creadoEn: new Date(),
+            });
+
+            Swal.fire({
+                title: "Registro Exitoso!!",   
+                icon: "success",          
+            });
+            reset();
+
+            // Si usás rutas protegidas, aquí podrías redirigir
+            // navigate("/home");
+
+        } catch (error) {
+            console.error("Error en el registro:", error);
+            setError("password", {
+                type: "manual",
+                message: error.message,
+            });
+        }
     };
+
 
     return (
         <div className="content2">

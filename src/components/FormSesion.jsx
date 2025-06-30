@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import { logo } from "./FormContent";
 import { dbStore } from "../firebase/appConfig";
 
-console.log(dbStore)
 export default function FormSesion() {
     const {
         register,
