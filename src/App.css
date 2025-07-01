@@ -52,7 +52,7 @@
   min-height: 100vh;
   padding: 20px;
   border-radius: 1rem;
-  margin-left: 10px;
+
 }
 
 /*NavBar*/
@@ -114,6 +114,9 @@ input::placeholder {
     justify-content: center; 
     align-items: center;     
     height: 100vh;           
+  }
+  .content{
+    margin-left: 10px;
   }
 }
 
