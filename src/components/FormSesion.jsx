@@ -1,6 +1,12 @@
 import { useForm } from "react-hook-form";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/appConfig";
 import { logo } from "./FormContent";
-import { dbStore } from "../firebase/appConfig";
+import Swal from "sweetalert2";
+import {
+    BrowserRouter,
+    Link,
+} from "react-router-dom";
 
 export default function FormSesion() {
     const {
@@ -13,7 +19,7 @@ export default function FormSesion() {
 
     const dominiosValidos = ["gmail.com", "outlook.com", "hotmail.com", "udb.edu.sv"];
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         const partes = data.email.split("@");
         if (partes.length !== 2) {
             setError("email", {
@@ -32,32 +38,71 @@ export default function FormSesion() {
             return;
         }
 
-        localStorage.setItem("usuario", data.email);
-        alert("Inicio de sesión exitoso!");
-        reset();
+        try {
+            //trae las credenciales para comprobar
+            const userCredential = await signInWithEmailAndPassword(auth, data.email, data.password);
 
-        setTimeout(() => {
-            const modal = document.querySelector('#loginModal');
-            modal?.classList.remove('show');
-            document.body.classList.remove('modal-open');
-            document.querySelector('.modal-backdrop')?.remove();
-        }, 300);
+            localStorage.setItem("usuario", data.email);
+            Swal.fire({
+                title: "¡Inicio de sesión exitoso!",
+                icon: "success",
+                timer: 1500,
+                showConfirmButton: false,
+            });
+            reset();
+
+            setTimeout(() => {
+                const modal = document.querySelector("#loginModal");
+                modal?.classList.remove("show");
+                document.body.classList.remove("modal-open");
+                document.querySelector(".modal-backdrop")?.remove();
+            }, 300);
+        } catch (error) {
+            console.log("Código de error:", error.code);
+            if (error.code === "auth/user-not-found") {
+                setError("email", {
+                    type: "manual",
+                    message: "Este correo no está registrado.",
+                });
+            } else if (
+                error.code === "auth/invalid-credential" ||
+                error.code === "auth/user-not-found"
+            ) {
+                // Mensaje genérico para no dar pistas
+                setError("password", {
+                    type: "manual",
+                    message: "Correo o contraseña incorrectos.",
+                });
+            } else {
+                console.error("Error al iniciar sesión:", error);
+                Swal.fire({
+                    title: "Oops...",
+                    text: "Error inesperado. Intenta de nuevo.",
+                    icon: "error",
+                });
+            }
+        }
     };
 
     return (
         <div className="content2">
-
             <section className="caja text-center">
-                <div className="Btn-inicio ">
+                <div className="Btn-inicio">
                     <img width="40px" src={logo} alt="LogoSpotify" />
                     <h2>Inicia sesión en Spotify y disfruta de la música</h2>
-                    <button className="btn btn-danger rounded-pill px-3 fw-bold py-2 mb-2 mt-3" >Continuar con Google</button>
-                    <button className="btn btn-primary rounded-pill px-3 fw-bold py-2 my-2">Continuar con Facebook</button>
-                    <button className="btn btn-light rounded-pill px-3 fw-bold py-2 my-2">Continuar con Apple</button>
+                    <button className="btn btn-danger rounded-pill px-3 fw-bold py-2 mb-2 mt-3">
+                        Continuar con Google
+                    </button>
+                    <button className="btn btn-primary rounded-pill px-3 fw-bold py-2 my-2">
+                        Continuar con Facebook
+                    </button>
+                    <button className="btn btn-light rounded-pill px-3 fw-bold py-2 my-2">
+                        Continuar con Apple
+                    </button>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-3">
-                        <label className="form-label"> Direccion de Correo electrónico</label>
+                        <label className="form-label">Dirección de Correo Electrónico</label>
                         <input
                             type="email"
                             className={`form-control ${errors.email ? "is-invalid" : ""}`}
@@ -81,9 +126,10 @@ export default function FormSesion() {
                     </div>
 
                     <button type="submit" className="btn btn-success rounded-pill w-100">
-                        Iniciar Sesion
+                        Iniciar Sesión
                     </button>
-
+                    <Link to={"/signin"} className="nav-link text-white ms-3 mt-3 ">No estas registrado? Registrate aqui!
+                    </Link>
                 </form>
             </section>
         </div>

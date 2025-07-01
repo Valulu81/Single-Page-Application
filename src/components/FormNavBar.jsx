@@ -30,7 +30,7 @@ export function FormNavbar() {
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0 m-1">
 
                                 <form className="d-flex col-10 " role="search">
-                                    <input className="form-control me-2 w-100 rounded-5 ms-3" type="search" placeholder="¿Qué quieres reproducir?" aria-label="Search" style={{ color: 'white' }} />
+                                    <input className="form-control me-2 w-100 rounded-5 ms-3 text-light" type="search" placeholder="¿Qué quieres reproducir?" aria-label="Search" style={{ color: 'white'}} />
                                     <button className="btn text-light" type="submit">
                                         <i className="fa-solid fa-magnifying-glass"></i>
                                     </button>
@@ -50,8 +50,7 @@ export function FormNavbar() {
                             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <div className="vr mx-3 d-none d-lg-block text-white"></div>
                                 <li className="nav-item ">
-                                    <Link to={"/signin"}>
-                                        <a className="nav-link text-white ms-3" href="#">Regístrate</a>
+                                    <Link to={"/signin"} className="nav-link text-white ms-3" >Regístrate
                                     </Link>
                                 </li>
                                 <li className="nav-item pt-1  ms-2 ">

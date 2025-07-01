@@ -59,6 +59,10 @@
 .navbar{
   background-color: black;
 }
+input::placeholder {
+  color: white !important;
+  opacity: 1; 
+}
 
 
 /*canciones*/
@@ -102,17 +106,18 @@
     flex-direction: column;
     justify-content: center;
     border-radius: 2%;
-    margin: 0; /* se elimina el margin auto para dejar que flex haga el centrado */
+    margin: 0; 
   }
+
   .content2 {
     display: flex;
-    justify-content: center; /* centra horizontalmente */
-    align-items: center;     /* centra verticalmente */
-    height: 100vh;           /* ocupa el alto total de la pantalla */
+    justify-content: center; 
+    align-items: center;     
+    height: 100vh;           
   }
 }
 
-/*Parte del Iniciar Sesion*/
+/*Parte del Iniciar Sesion y registro*/
 
   .caja {
   background-color: #121212;
@@ -164,6 +169,7 @@ form .form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(30, 215, 96, 0.25);
   outline: none;
   background-color: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
 form .form-label {
@@ -171,3 +177,4 @@ form .form-label {
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
+
