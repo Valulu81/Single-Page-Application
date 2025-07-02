@@ -7,8 +7,8 @@ export function FormContent() {
         <>
                 <div className="layout">
                 <aside className="lateral p-2">
-                    <a href="" class=" sidebar-link text-decoration-none ">Tu biblioteca</a>
-                    <a href="" className=" sidebar-link  text-decoration-none "><i class="fa-solid fa-plus icon-plus"></i><br /></a>
+                    <a href="" className=" sidebar-link text-decoration-none ">Tu biblioteca</a>
+                    <a href="" className=" sidebar-link  text-decoration-none "><i className="fa-solid fa-plus icon-plus"></i><br /></a>
                     <div className="card text-bg-dark rounded-4">
 
                     <div className="card-body ">
