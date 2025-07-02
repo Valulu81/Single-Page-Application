@@ -46,7 +46,7 @@ export function FormNavbar() {
                                 </li>
                             </ul>
 
-                            {/* Sección alineada a la derecha */}
+                            
                             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <div className="vr mx-3 d-none d-lg-block text-white"></div>
                                 <li className="nav-item ">

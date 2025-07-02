@@ -39,7 +39,7 @@ export default function FormSesion() {
         }
 
         try {
-            //trae las credenciales para comprobar
+           
             const userCredential = await signInWithEmailAndPassword(auth, data.email, data.password);
 
             localStorage.setItem("usuario", data.email);
@@ -68,7 +68,7 @@ export default function FormSesion() {
                 error.code === "auth/invalid-credential" ||
                 error.code === "auth/user-not-found"
             ) {
-                // Mensaje genérico para no dar pistas
+                
                 setError("password", {
                     type: "manual",
                     message: "Correo o contraseña incorrectos.",

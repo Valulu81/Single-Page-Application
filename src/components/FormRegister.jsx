@@ -33,7 +33,7 @@ export default function FormRegistro() {
             const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
             const user = userCredential.user;
 
-            // Guardar datos en Firestore
+
             await setDoc(doc(dbStore, "usuarios", user.uid), {
                 email: data.email,
                 creadoEn: new Date(),
@@ -45,8 +45,6 @@ export default function FormRegistro() {
             });
             reset();
 
-            // Si usás rutas protegidas, aquí podrías redirigir
-            // navigate("/home");
 
         } catch (error) {
             console.error("Error en el registro:", error);
